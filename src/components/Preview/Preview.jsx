@@ -9,17 +9,17 @@ import "./Preview.css";
 import { v4 as uuid } from "uuid";
 
 // Icons
-import CloseIcon from "@material-ui/icons/Close";
+import CloseIcon from "@mui/icons-material/Close";
 
 // Icons in Right side of the review
-import SendIcon from "@material-ui/icons/Send";
-import TextFieldsIcon from "@material-ui/icons/TextFields";
-import CreateIcon from "@material-ui/icons/Create";
-import NoteIcon from "@material-ui/icons/Note";
-import MusicNoteIcon from "@material-ui/icons/MusicNote";
-import CropIcon from "@material-ui/icons/Crop";
-import TimerIcon from "@material-ui/icons/Timer";
-import AttachFileIcon from "@material-ui/icons/AttachFile";
+import SendIcon from "@mui/icons-material/Send";
+import TextFieldsIcon from "@mui/icons-material/TextFields";
+import CreateIcon from "@mui/icons-material/Create";
+import NoteIcon from "@mui/icons-material/Note";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import CropIcon from "@mui/icons-material/Crop";
+import TimerIcon from "@mui/icons-material/Timer";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
 
 // firebase storage
 import { db, storage } from "../../firebase";
