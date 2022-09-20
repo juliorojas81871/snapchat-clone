@@ -19,6 +19,7 @@ const WebcamCapture = () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
           video: true,
+          audio:false,
         });
 
         setUserMedia(stream);
@@ -65,7 +66,7 @@ const WebcamCapture = () => {
     if (!canvas.current) return;
     const imageSrc = canvas.current.toDataURL();
     dispatch(setCameraImage(imageSrc));
-    navigate("/preview");
+    navigate("/preview", { replace: true });
   }, [canvas.current]);
 
   if (error) {

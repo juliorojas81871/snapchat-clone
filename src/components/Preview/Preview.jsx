@@ -27,7 +27,6 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import {
   getDownloadURL,
   ref,
-  uploadBytesResumable,
   uploadString,
 } from "@firebase/storage";
 
@@ -42,7 +41,7 @@ const Preview = () => {
   // react components life cycle
   useEffect(() => {
     if (!cameraImage) {
-      navigate("/");
+      navigate("/", { replace: true });
     }
   }, [cameraImage, navigate]);
 
@@ -69,7 +68,7 @@ const Preview = () => {
           read: false,
           timestamp: serverTimestamp(),
         });
-        navigate("/chats");
+        navigate("/chats", { replace: true });
       });
     });
   };

@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import WebcamCapture from './components/WebcamCapture/WebcamCapture';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Preview from './components/Preview/Preview';
+import { WebcamCapture, Preview, Chats, ChatView } from "./components/index";
 
 function App() {
   return (
@@ -10,6 +9,8 @@ function App() {
       <Router>
         <div className='app_body'>
           <Routes>
+            <Route path="/chats/view" element={<ChatView />} />
+            <Route path="/chats" element={<Chats />} />
             <Route path="/preview" element={<Preview />} />
             <Route exact path="/" element={<WebcamCapture />} />
           </Routes>
