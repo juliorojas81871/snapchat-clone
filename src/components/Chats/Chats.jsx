@@ -9,6 +9,7 @@ import { Chat } from '../index';
 
 const Chats = () => {
     const [posts, setPosts] = useState([]);
+    const [searchFriend, setSearchFriend] = useState('');
 
     // from data from firebase
     useEffect(()=>{
@@ -26,12 +27,22 @@ const Chats = () => {
             <Avatar className='chats_avatar' />
             <div className='chats_search'>
                 <SearchIcon />
-                <input placeholder='Friends' type='text' />
+                <input 
+                    placeholder='Friends' 
+                    type='text' 
+                    onChange={(e) => setSearchFriend(e.target.value)}
+                />
             </div>
             <ChatBubbleIcon className='chats_chatIcon' />
         </div>
         <div className='chats_posts'>
-            {posts.map(({id, data:{profilePic, username, timestamp, imageUrl, read}}) => (
+            {posts.filter((val) => {
+                if(!searchFriend){
+                    return val;
+                } else if (val.data.username.toLowerCase().includes(searchFriend.toLowerCase())){
+                    return val;
+                }
+            }).map(({id, data:{profilePic, username, timestamp, imageUrl, read}}) => (
                 <Chat
                     key={id}
                     id={id}

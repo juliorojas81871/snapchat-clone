@@ -64,7 +64,7 @@ const Preview = () => {
       getDownloadURL(snapshot.ref).then((url) => {
         addDoc(collectionRef, {
           imageUrl: url,
-          username: "bob",
+          username: "sam",
           read: false,
           timestamp: serverTimestamp(),
         });
