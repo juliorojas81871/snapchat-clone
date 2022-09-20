@@ -9,3 +9,8 @@
     cursor: pointer;
     color:red
 }
+.webcam {
+    height: 400px;
+    width: 250px;
+    object-fit: cover;
+}
