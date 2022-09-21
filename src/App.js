@@ -42,9 +42,9 @@ function App() {
                 <div className="app_body">
                   <Routes>
                     <Route path="/chats/view" element={<ChatView />} />
-                    <Route path="/chats" element={<Chats />} />
+                    <Route exact path="/" element={<Chats />} />
                     <Route path="/preview" element={<Preview />} />
-                    <Route exact path="/" element={<WebcamCapture />} />
+                    <Route path="/camera" element={<WebcamCapture />} />
                   </Routes>
                 </div>
               </div>

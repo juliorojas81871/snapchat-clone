@@ -35,7 +35,7 @@ const Chats = () => {
 
   const takeSnap = () => {
     dispatch(resetCameraImage);
-    navigate(`/`, { replace: true });
+    navigate(`/camera`, { replace: true });
   };
 
   return (

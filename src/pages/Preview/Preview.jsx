@@ -39,7 +39,7 @@ const Preview = () => {
   // react components life cycle
   useEffect(() => {
     if (!cameraImage) {
-      navigate("/", { replace: true });
+      navigate("/camera", { replace: true });
     }
   }, [cameraImage, navigate]);
 
@@ -68,7 +68,7 @@ const Preview = () => {
           read: false,
           timestamp: serverTimestamp(),
         });
-        navigate("/chats", { replace: true });
+        navigate("/", { replace: true });
       });
     });
   };

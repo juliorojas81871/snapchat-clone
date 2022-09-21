@@ -16,7 +16,7 @@ const ChatView = () => {
   }, [selectImage]);
 
   const exit = () => {
-    navigate("/chats", { replace: true });
+    navigate("/", { replace: true });
   };
   return (
     <div className="chatView">

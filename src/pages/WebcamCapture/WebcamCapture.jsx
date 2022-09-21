@@ -73,15 +73,15 @@ const WebcamCapture = () => {
     return <div>{error}</div>;
   }
 
-  const closePreview = () => {
+  const closeWebcam = () => {
     // this will also trigger the useEffect and got to home screen
-    navigate("/chats", { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (
     <div className="webcameCapture">
       <ArrowBackIosIcon
-        onClick={closePreview}
+        onClick={closeWebcam}
         className="webcameCapture_back"
       />
       <canvas ref={canvas} height={400} width={250} />
