@@ -5,6 +5,7 @@ import { WebcamCapture, Preview, Chats, ChatView, Login } from "./pages/index";
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './firebase';
 import { login, logout, selectUser } from './features/appSlice';
+import SnapChat from "./assets/snapchat.jpg";
 
 function App() {
   const user = useSelector(selectUser)
@@ -25,12 +26,16 @@ function App() {
     }, [])
 
   return (
+    
     <div className='app'>
       <Router>
       {!user ? (
         <Login />
       ) : (
-        <div className='app_body'>
+        <>
+        <img src={SnapChat} alt='' className='app_logo' />
+        <div className='app_body'> 
+        <div className='app_bodyBackground'>
           <Routes>
             <Route path="/chats/view" element={<ChatView />} />
             <Route path="/chats" element={<Chats />} />
@@ -38,10 +43,13 @@ function App() {
             <Route exact path="/" element={<WebcamCapture />} />
           </Routes>
         </div>
-      )}
+        </div>
         
+        </>
+      )}
       </Router>
     </div>
+    
   );
 }
 

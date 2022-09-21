@@ -7,7 +7,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Preview.css";
 import { v4 as uuid } from "uuid";
-
+import {selectUser} from '../../features/appSlice'
 // Icons
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -35,6 +35,8 @@ const Preview = () => {
   const cameraImage = useSelector(selectCameraImage);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector(selectUser)
+
   // firebase
   const collectionRef = collection(db, "posts");
 
@@ -64,7 +66,8 @@ const Preview = () => {
       getDownloadURL(snapshot.ref).then((url) => {
         addDoc(collectionRef, {
           imageUrl: url,
-          username: "sam",
+          username:user.username,
+          profilePic: user.profilePic,
           read: false,
           timestamp: serverTimestamp(),
         });
