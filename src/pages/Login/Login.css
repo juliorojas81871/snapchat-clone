@@ -11,6 +11,12 @@
   flex-direction: column;
 }
 
+@media (max-width:768px){
+  .login_container {
+    width: 350px;
+  }
+}
+
 .login_container > img {
   height: 300px;
   object-fit: contain;
