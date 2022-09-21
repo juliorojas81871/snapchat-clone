@@ -3,14 +3,25 @@
 }
 .webcamCapture_button{
     position: absolute;
-    bottom: 0;
+    bottom: -65px;
     left:50%;
     transform: translate(-50%,-50%);
     cursor: pointer;
     color:white
 }
-.webcam {
-    height: 400px;
-    width: 250px;
-    object-fit: cover;
+
+.webcamCapture_button:hover{
+    opacity: 0.8;
+}
+
+.webcameCapture_back{
+    position: absolute;
+    top:0;
+    margin:5px;
+    cursor: pointer;
+    color:white
+}
+
+.webcameCapture_back:hover{
+    opacity: 0.8;
 }

@@ -7,7 +7,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Preview.css";
 import { v4 as uuid } from "uuid";
-import {selectUser} from '../../features/appSlice'
+import { selectUser } from "../../features/appSlice";
 // Icons
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -24,18 +24,14 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 // firebase storage
 import { db, storage } from "../../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import {
-  getDownloadURL,
-  ref,
-  uploadString,
-} from "@firebase/storage";
+import { getDownloadURL, ref, uploadString } from "@firebase/storage";
 
 const Preview = () => {
   // useSelector it grabs it from the redux
   const cameraImage = useSelector(selectCameraImage);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
 
   // firebase
   const collectionRef = collection(db, "posts");
@@ -55,6 +51,7 @@ const Preview = () => {
     e.preventDefault();
     uploadFiles(cameraImage);
   };
+
   const uploadFiles = (file) => {
     if (!file) return;
 
@@ -66,7 +63,7 @@ const Preview = () => {
       getDownloadURL(snapshot.ref).then((url) => {
         addDoc(collectionRef, {
           imageUrl: url,
-          username:user.username,
+          username: user.username,
           profilePic: user.profilePic,
           read: false,
           timestamp: serverTimestamp(),

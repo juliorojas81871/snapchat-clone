@@ -1,13 +1,18 @@
 .chatView {
-    position: relative;
+  position: relative;
 }
 .chatView > img {
-    cursor: pointer;
+  cursor: pointer;
 }
+
+.chatView > img:hover {
+  opacity: 0.8;
+}
+
 .chatView__timer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  color: white;
 }

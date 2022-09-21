@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import Webcam from "react-webcam";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import { setCameraImage } from "../../features/cameraSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./WebcamCapture.css";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 const WebcamCapture = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const WebcamCapture = () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
           video: true,
-          audio:false,
+          audio: false,
         });
 
         setUserMedia(stream);
@@ -73,8 +73,17 @@ const WebcamCapture = () => {
     return <div>{error}</div>;
   }
 
+  const closePreview = () => {
+    // this will also trigger the useEffect and got to home screen
+    navigate("/chats", { replace: true });
+  };
+
   return (
     <div className="webcameCapture">
+      <ArrowBackIosIcon
+        onClick={closePreview}
+        className="webcameCapture_back"
+      />
       <canvas ref={canvas} height={400} width={250} />
       <RadioButtonUncheckedIcon
         className="webcamCapture_button"
