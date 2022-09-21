@@ -1,5 +1,7 @@
 .preview {
   position: relative;
+  top: 70px;
+  right: 3px;
 }
 
 .preview_close {

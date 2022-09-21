@@ -1,5 +1,7 @@
 .webcameCapture{
     position: relative;
+    top:70px;
+    left:-3px
 }
 .webcamCapture_button{
     position: absolute;

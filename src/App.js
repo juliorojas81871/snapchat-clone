@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./firebase";
 import { login, logout, selectUser } from "./features/appSlice";
 import SnapChat2 from "./assets/snapchat2.jpg";
+import Iphone13 from "./assets/iphone13.png";
 
 function App() {
   const user = useSelector(selectUser);
@@ -35,14 +36,17 @@ function App() {
         ) : (
           <>
             <img src={SnapChat2} alt="" className="app_logo" />
-            <div className="app_body">
+            <div>
+              <img src={Iphone13} className="app_phone_body" />
               <div className="app_bodyBackground">
-                <Routes>
-                  <Route path="/chats/view" element={<ChatView />} />
-                  <Route path="/chats" element={<Chats />} />
-                  <Route path="/preview" element={<Preview />} />
-                  <Route exact path="/" element={<WebcamCapture />} />
-                </Routes>
+                <div className="app_body">
+                  <Routes>
+                    <Route path="/chats/view" element={<ChatView />} />
+                    <Route path="/chats" element={<Chats />} />
+                    <Route path="/preview" element={<Preview />} />
+                    <Route exact path="/" element={<WebcamCapture />} />
+                  </Routes>
+                </div>
               </div>
             </div>
           </>

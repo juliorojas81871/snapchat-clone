@@ -1,8 +1,9 @@
 .chats {
   position: relative;
   height: 470px;
-  width: 250px;
-  top: -40px;
+  width: 249.5px;
+  top: 31.5px;
+  left: -3px;
 }
 
 .chats_header {
@@ -51,9 +52,9 @@
   margin-top: -9px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 32px;
-  height: 472px;
+  border-bottom-left-radius: 31px;
+  border-bottom-right-radius: 31px;
+  height: 474.5px;
   background-color: white;
   overflow: scroll;
 }

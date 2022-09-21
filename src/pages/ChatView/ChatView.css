@@ -1,5 +1,7 @@
 .chatView {
   position: relative;
+  top: 70px;
+  right: 3px;
 }
 .chatView > img {
   cursor: pointer;
