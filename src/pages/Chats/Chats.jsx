@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import { db } from '../../firebase';
 import { collection, onSnapshot, orderBy, query } from '@firebase/firestore'
-import { Chat } from '../index';
+import { Chat } from '../../components/index';
 
 const Chats = () => {
     const [posts, setPosts] = useState([]);
