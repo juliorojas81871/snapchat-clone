@@ -36,7 +36,7 @@ function App() {
         ) : (
           <>
             <img src={SnapChat2} alt="" className="app_logo" />
-            <div>
+            <div className="relative">
               <img src={Iphone13} className="app_phone_body" />
               <div className="app_bodyBackground">
                 <div className="app_body">

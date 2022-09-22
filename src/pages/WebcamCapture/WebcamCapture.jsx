@@ -70,6 +70,7 @@ const WebcamCapture = () => {
   }, [canvas.current]);
 
   if (error) {
+    // for the setError, css the heck out of it
     return <div>{error}</div>;
   }
 
