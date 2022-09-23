@@ -71,7 +71,7 @@ const WebcamCapture = () => {
 
   if (error) {
     // for the setError, css the heck out of it
-    return <div>{error}</div>;
+    return <div className="alert">{error}</div>;
   }
 
   const closeWebcam = () => {
