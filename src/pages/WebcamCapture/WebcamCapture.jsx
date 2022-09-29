@@ -85,7 +85,7 @@ const WebcamCapture = () => {
         onClick={closeWebcam}
         className="webcameCapture_back"
       />
-      <canvas ref={canvas} height={400} width={250} />
+      <canvas ref={canvas} height={480} width={250} />
       <RadioButtonUncheckedIcon
         className="webcamCapture_button"
         onClick={capture}
