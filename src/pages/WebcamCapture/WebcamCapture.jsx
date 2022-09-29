@@ -38,7 +38,10 @@ const WebcamCapture = () => {
     const video = document.createElement("video");
 
     video.srcObject = userMedia;
-    video.play();
+    // video.play();
+    video.setAttribute('autoplay', '');     
+    video.setAttribute('muted', '');     
+    video.setAttribute('playsinline', ''); 
 
     const [videoTrack] = userMedia.getVideoTracks();
 
